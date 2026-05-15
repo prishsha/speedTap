@@ -1,0 +1,46 @@
+.target {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  cursor: crosshair;
+  box-shadow: 0 0 0 4px rgba(232, 93, 38, 0.25);
+  animation: targetAppear 0.15s cubic-bezier(0.34,1.56,0.64,1) forwards,
+             targetShrink var(--lifetime) linear forwards;
+  transition: transform 0.1s, background 0.1s;
+}
+
+.target::after {
+  content: '';
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+}
+
+.target:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: var(--accent-hover);
+}
+
+.target--hit {
+  animation: targetHit 0.16s ease forwards !important;
+  pointer-events: none;
+}
+
+@keyframes targetAppear {
+  from { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  to   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+@keyframes targetShrink {
+  from { box-shadow: 0 0 0 4px rgba(232, 93, 38, 0.25); }
+  to   { box-shadow: 0 0 0 4px rgba(232, 93, 38, 0.25); opacity: 0.3; }
+}
+
+@keyframes targetHit {
+  0%   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  60%  { transform: translate(-50%, -50%) scale(1.4); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}

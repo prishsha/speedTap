@@ -1,0 +1,77 @@
+.game {
+  width: 100%;
+  max-width: 680px;
+}
+
+.game__arena {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  user-select: none;
+}
+
+.game__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--surface);
+  z-index: 10;
+}
+
+.game__overlay--dim {
+  background: rgba(0,0,0,0.55);
+}
+
+.game__overlay-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.game__overlay--dim .game__overlay-sub {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.game__start-btn {
+  padding: 14px 44px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background 0.18s, transform 0.12s;
+  box-shadow: 0 4px 14px rgba(232,93,38,0.35);
+}
+
+.game__start-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+.game__start-btn:active { transform: translateY(0); }
+
+.game__countdown {
+  font-size: 5rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  animation: countPop 0.9s ease infinite;
+}
+
+@keyframes countPop {
+  0% { transform: scale(0.7); opacity: 0.4; }
+  40% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}

@@ -1,20 +1,36 @@
-type Props = {
-  top: string;
-  left: string;
-  onClick: () => void;
-};
+import React, { useEffect, useState } from 'react';
+import { TargetItem } from '../types';
+import '../styles/Target.css';
 
-function Target({ top, left, onClick }: Props) {
+interface Props {
+  target: TargetItem;
+  lifetime: number;
+  onHit: (id: string) => void;
+}
+
+const Target: React.FC<Props> = ({ target, lifetime, onHit }) => {
+  const [hit, setHit] = useState(false);
+
+  const handleClick = () => {
+    if (hit) return;
+    setHit(true);
+    setTimeout(() => onHit(target.id), 160);
+  };
+
   return (
-    <div
-      className="target"
-      onClick={onClick}
+    <button
+      className={`target${hit ? ' target--hit' : ''}`}
       style={{
-        top,
-        left,
-      }}
+        left: `${target.x}%`,
+        top: `${target.y}%`,
+        width: target.size,
+        height: target.size,
+        '--lifetime': `${lifetime}ms`,
+      } as React.CSSProperties}
+      onClick={handleClick}
+      aria-label="Hit target"
     />
   );
-}
+};
 
 export default Target;
