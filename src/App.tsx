@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Game from './components/Game';
-import { Difficulty } from './types';
-import './styles/App.css';
+import type { Difficulty } from './types';
+import './App.css';
 
 const App: React.FC = () => {
   const [difficulty, setDifficulty] = useState<Difficulty>('medium');

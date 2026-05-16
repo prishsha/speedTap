@@ -24,7 +24,7 @@ export interface DifficultyConfig {
 export const DIFFICULTY_CONFIGS: Record<Difficulty, DifficultyConfig> = {
   easy: {
     label: 'Easy',
-    gameDuration: 30,
+    gameDuration: 10,
     targetLifetime: 2500,
     spawnInterval: 1000,
     maxTargets: 3,
@@ -34,7 +34,7 @@ export const DIFFICULTY_CONFIGS: Record<Difficulty, DifficultyConfig> = {
   },
   medium: {
     label: 'Medium',
-    gameDuration: 30,
+    gameDuration: 10,
     targetLifetime: 1600,
     spawnInterval: 700,
     maxTargets: 4,
@@ -44,7 +44,7 @@ export const DIFFICULTY_CONFIGS: Record<Difficulty, DifficultyConfig> = {
   },
   hard: {
     label: 'Hard',
-    gameDuration: 30,
+    gameDuration: 10,
     targetLifetime: 900,
     spawnInterval: 450,
     maxTargets: 5,

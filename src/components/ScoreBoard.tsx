@@ -1,6 +1,7 @@
 import React from 'react';
-import { Difficulty, DIFFICULTY_CONFIGS } from '../types';
-import '../styles/ScoreBoard.css';
+import type { Difficulty} from '../types';
+import { DIFFICULTY_CONFIGS } from '../types';
+import './ScoreBoard.css';
 
 interface Props {
   score: number;

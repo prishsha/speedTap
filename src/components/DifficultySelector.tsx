@@ -1,5 +1,6 @@
 import React from 'react';
-import { Difficulty, DIFFICULTY_CONFIGS } from '../types';
+import type { Difficulty} from '../types';
+import { DIFFICULTY_CONFIGS } from '../types';
 import '../styles/DifficultySelector.css';
 
 interface Props {

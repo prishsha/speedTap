@@ -1,4 +1,4 @@
-import { Difficulty } from '../types';
+import type { Difficulty } from '../types';
 
 const KEY = 'speedtap_highscores';
 

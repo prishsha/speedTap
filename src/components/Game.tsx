@@ -1,5 +1,5 @@
 import React from 'react';
-import { Difficulty } from '../types';
+import type { Difficulty } from '../types';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Target from './Target';
 import ScoreBoard from './ScoreBoard';

@@ -1,0 +1,73 @@
+.difficulty {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.difficulty__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.difficulty__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.difficulty__btn {
+  padding: 7px 18px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.18s;
+}
+
+.difficulty__btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.difficulty__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.difficulty__btn--active.difficulty__btn--easy {
+  background: #d4edda;
+  border-color: #2b9e6f;
+  color: #2b9e6f;
+}
+.difficulty__btn--active.difficulty__btn--medium {
+  background: #fff3cd;
+  border-color: #d4a017;
+  color: #b8860b;
+}
+.difficulty__btn--active.difficulty__btn--hard {
+  background: #fde8e8;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+[data-theme="dark"] .difficulty__btn--active.difficulty__btn--easy {
+  background: #1a3d2b;
+  border-color: #2b9e6f;
+  color: #4dcf96;
+}
+[data-theme="dark"] .difficulty__btn--active.difficulty__btn--medium {
+  background: #3d3010;
+  border-color: #d4a017;
+  color: #f5c842;
+}
+[data-theme="dark"] .difficulty__btn--active.difficulty__btn--hard {
+  background: #3d1212;
+  border-color: var(--danger);
+  color: #ff6b6b;
+}

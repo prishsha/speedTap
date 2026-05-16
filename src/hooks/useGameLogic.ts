@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Difficulty, GameStatus, TargetItem, DIFFICULTY_CONFIGS } from '../types';
-import { getHighScores, saveHighScore } from '../utils/storage';
+import type { Difficulty, GameStatus, TargetItem} from '../types';
+import { DIFFICULTY_CONFIGS } from '../types';
+import { getHighScores, saveHighScore } from '../utils/index'
 
 function randomId() {
   return Math.random().toString(36).slice(2, 9);
