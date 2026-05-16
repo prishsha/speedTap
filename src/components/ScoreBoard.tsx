@@ -45,12 +45,12 @@ const ScoreBoard: React.FC<Props> = ({
 
       <div className="scoreboard__high">
         <span className="scoreboard__high-label">Best on {DIFFICULTY_CONFIGS[difficulty].label}</span>
-        <span className="scoreboard__high-value">🏆 {highScores[difficulty]}</span>
+        <span className="scoreboard__high-value">{highScores[difficulty]}</span>
       </div>
 
       {status === 'finished' && (
         <div className="scoreboard__result">
-          {isNewHigh && <p className="scoreboard__new-high">🎉 New High Score!</p>}
+          {isNewHigh && <p className="scoreboard__new-high">YAY New High Score!</p>}
           <p className="scoreboard__final">Final Score: <strong>{score}</strong></p>
           <p className="scoreboard__final">Targets Missed: <strong>{missed}</strong></p>
           <button className="scoreboard__restart-btn" onClick={onRestart}>

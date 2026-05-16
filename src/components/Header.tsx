@@ -9,7 +9,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ darkMode, onToggleDark }) => (
   <header className="header">
     <div className="header__logo">
-      <span className="header__logo-icon">⚡</span>
       <span className="header__logo-text">SpeedTap</span>
     </div>
     <button
