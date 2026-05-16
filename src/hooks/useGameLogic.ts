@@ -3,12 +3,13 @@ import type { Difficulty, GameStatus, TargetItem} from '../types';
 import { DIFFICULTY_CONFIGS } from '../types';
 import { getHighScores, saveHighScore } from '../utils/index'
 
+//randomly generates a string id for targets
 function randomId() {
   return Math.random().toString(36).slice(2, 9);
 }
 
 function spawnTarget(size: number): TargetItem {
-  const padding = 8; // percent
+  const padding = 8; 
   const x = padding + Math.random() * (100 - 2 * padding);
   const y = padding + Math.random() * (100 - 2 * padding);
   return { id: randomId(), x, y, size, createdAt: Date.now() };
@@ -37,7 +38,6 @@ export function useGameLogic(difficulty: Difficulty) {
     });
   }, []);
 
-  // Sync config when difficulty changes while idle
   useEffect(() => {
     if (status === 'idle' || status === 'finished') {
       setTimeLeft(DIFFICULTY_CONFIGS[difficulty].gameDuration);
@@ -89,7 +89,7 @@ export function useGameLogic(difficulty: Difficulty) {
       });
     }, 1000);
 
-    // Target spawner
+    // Tcreates targets at intervals
     spawnRef.current = setInterval(() => {
       setTargets(prev => {
         if (prev.length >= cfg.maxTargets) return prev;
@@ -97,7 +97,7 @@ export function useGameLogic(difficulty: Difficulty) {
       });
     }, cfg.spawnInterval);
 
-    // Target expiry checker
+    // checks for expired targets
     expireRef.current = setInterval(() => {
       const now = Date.now();
       setTargets(prev => {
