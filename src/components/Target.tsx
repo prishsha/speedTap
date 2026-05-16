@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { TargetItem } from '../types';
-import './Target.css';
+import '../styles/Target.css';
 
 interface Props {
   target: TargetItem;
